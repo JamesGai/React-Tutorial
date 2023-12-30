@@ -5,17 +5,17 @@ const LineItem = ({ item, handleCheck, handleDeletion }) => {
     <li className="item">
       <input
         type="checkbox"
-        onChange={() => handleCheck(item.id)} // we must have an annonymous function because we are passing a reference to the item id
+        onChange={() => handleCheck(item.id)} // we must have an annonymous function because we are passing a reference to the item id, otherwise the app will run into infinity
         checked={item.checked}
       />
       <label
         style={item.checked ? { textDecoration: "line-through" } : null}
-        onDoubleClick={() => handleCheck(item.id)} // we must have an annonymous function because we are passing a reference to the item id
+        onDoubleClick={() => handleCheck(item.id)} // we must have an annonymous function because we are passing a reference to the item id, otherwise the app will run into infinity
       >
         {item.description}
       </label>
       <FaTrashAlt
-        onClick={() => handleDeletion(item.id)} // we must have an annonymous function because we are passing a reference to the item id
+        onClick={() => handleDeletion(item.id)} // we must have an annonymous function because we are passing a reference to the item id, otherwise the app will run into infinity
         role="button"
         tabIndex="0"
       />
